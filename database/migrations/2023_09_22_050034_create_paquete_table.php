@@ -13,12 +13,9 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('asociado_tiposervicio', function (Blueprint $table) {
+        Schema::create('paquete', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('tip_ser_id');
-            $table->unsignedBigInteger('aso_id');
-            $table->foreign('aso_id')->references('id')->on('asociado');
-            $table->foreign('tip_ser_id')->references('id')->on('tiposervicio');
+            $table->timestamps();
         });
     }
 
@@ -29,6 +26,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('asociado_tiposervicio');
+        Schema::dropIfExists('paquete');
     }
 };

@@ -15,13 +15,7 @@ return new class extends Migration
     {
         Schema::create('detallevuelo', function (Blueprint $table) {
             $table->id();
-            $table->integer('asiento');
-            $table->unsignedBigInteger('promo_id')->nullable();;
-            $table->unsignedBigInteger('entrada_id')->nullable();
-            $table->unsignedBigInteger('paq_id')->nullable();
-            $table->foreign('promo_id')->references('id')->on('promocion');
-            $table->foreign('entrada_id')->references('id')->on('entrada');
-            $table->foreign('paq_id')->references('id')->on('paquete');
+            $table->timestamps();
         });
     }
 

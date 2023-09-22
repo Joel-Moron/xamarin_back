@@ -13,11 +13,9 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('asociado', function (Blueprint $table) {
+        Schema::create('restaurante', function (Blueprint $table) {
             $table->id();
-            $table->bigInteger('aso_ruc')->length(11);
-            $table->bigInteger('aso_telefono')->length(9);
-            $table->string('aso_rsocial',100);
+            $table->timestamps();
         });
     }
 
@@ -28,6 +26,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('asociado');
+        Schema::dropIfExists('restaurante');
     }
 };

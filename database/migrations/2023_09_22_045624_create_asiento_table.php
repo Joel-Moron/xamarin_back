@@ -13,14 +13,9 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('historial', function (Blueprint $table) {
+        Schema::create('asiento', function (Blueprint $table) {
             $table->id();
-            $table->boolean('estado');
-            $table->unsignedBigInteger('detalle_id')->nullable();;
-            $table->unsignedBigInteger('user_id')->nullable();
-            $table->foreign('user_id')->references('id')->on('user');
-            $table->foreign('detalle_id')->references('id')->on('detallevuelo');
-
+            $table->timestamps();
         });
     }
 
@@ -31,6 +26,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('historial');
+        Schema::dropIfExists('asiento');
     }
 };

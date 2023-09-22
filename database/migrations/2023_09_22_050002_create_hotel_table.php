@@ -13,9 +13,9 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('tiposervicio', function (Blueprint $table) {
+        Schema::create('hotel', function (Blueprint $table) {
             $table->id();
-            $table->string('tip_ser_nombre',30);
+            $table->timestamps();
         });
     }
 
@@ -26,6 +26,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('tiposervicio');
+        Schema::dropIfExists('hotel');
     }
 };
