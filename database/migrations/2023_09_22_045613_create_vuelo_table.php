@@ -15,7 +15,8 @@ return new class extends Migration
     {
         Schema::create('vuelo', function (Blueprint $table) {
             $table->id();
-            $table->timestamps();
+            $table->date('vue_fecha');
+            $table->time('vue_hora');
         });
     }
 

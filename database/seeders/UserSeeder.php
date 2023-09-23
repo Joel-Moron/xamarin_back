@@ -19,14 +19,16 @@ class UserSeeder extends Seeder
         //
         $users = [
             [
-                'user_name' => 'Isaac Stevens',
-                'user_app' => 'Moron',
-                'user_apm' => 'Ochante',
-                'user_dni' => 72815812,
-                'user_email' => 'raiinstevens3003@gmail.com',
-                'user_emailV' => null,
-                'user_password' => Hash::make('123456'),
-                'user_token' => null,
+                'usu_nombre' => 'Isaac Stevens',
+                'usu_apellidop' => 'Moron',
+                'usu_apellidom' => 'Ochante',
+                'usu_documento' => 72815812,
+                'usu_email' => 'raiinstevens3003@gmail.com',
+                'usu_emailV' => null,
+                'usu_password' => Hash::make('123456'),
+                'usu_targeta' => 1234567891012131,
+                'rol_id' => 2,
+                'usu_token' => null,
                 'date_token' => null,
             ]
             // Agrega más registros aquí

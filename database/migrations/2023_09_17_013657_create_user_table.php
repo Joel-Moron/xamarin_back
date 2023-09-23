@@ -18,13 +18,15 @@ return new class extends Migration
             $table->string('usu_nombre');
             $table->string('usu_apellidop');
             $table->string('usu_apellidom');
-            $table->bigInteger('usu_documento');
+            $table->integer('usu_documento');
             $table->string('usu_email')->unique();
             $table->string('usu_emailV')->nullable();
             $table->string('usu_password');
             $table->string('usu_targeta')->length(16);
+            $table->unsignedBigInteger('rol_id');
             $table->string('usu_token')->nullable();
             $table->date('date_token')->nullable();
+            $table->foreign('rol_id')->references('id')->on('rol');
             //$table->timestamps();
         });
     }

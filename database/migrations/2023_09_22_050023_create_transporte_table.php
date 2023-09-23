@@ -15,7 +15,10 @@ return new class extends Migration
     {
         Schema::create('transporte', function (Blueprint $table) {
             $table->id();
-            $table->timestamps();
+            $table->text('tra_ubicacion');
+            $table->float('tra_precio',8,2);
+            $table->unsignedBigInteger('aso_id');
+            $table->foreign('aso_id')->references('id')->on('asociado');
         });
     }
 

@@ -15,7 +15,12 @@ return new class extends Migration
     {
         Schema::create('detallevuelo', function (Blueprint $table) {
             $table->id();
-            $table->timestamps();
+            //$table->date('det_fecha');
+            //$table->float('det_precio',8,2);
+            $table->unsignedBigInteger('paq_id');
+            $table->unsignedBigInteger('usu_id');
+            $table->foreign('paq_id')->references('id')->on('paquete');
+            $table->foreign('usu_id')->references('id')->on('user');
         });
     }
 

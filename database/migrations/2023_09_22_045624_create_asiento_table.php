@@ -15,7 +15,10 @@ return new class extends Migration
     {
         Schema::create('asiento', function (Blueprint $table) {
             $table->id();
-            $table->timestamps();
+            $table->integer('asi_numero')->length(3);
+            $table->boolean('asi_estado');
+            $table->unsignedBigInteger('vue_id');
+            $table->foreign('vue_id')->references('id')->on('vuelo');
         });
     }
 

@@ -15,7 +15,9 @@ return new class extends Migration
     {
         Schema::create('destino', function (Blueprint $table) {
             $table->id();
-            $table->timestamps();
+            $table->float('precio',8,2);
+            $table->unsignedBigInteger('pais_id');
+            $table->foreign('pais_id')->references('id')->on('pais');
         });
     }
 

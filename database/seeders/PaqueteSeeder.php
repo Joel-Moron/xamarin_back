@@ -16,13 +16,19 @@ class PaqueteSeeder extends Seeder
     public function run()
     {
         // Obtener todos los IDs de tiposervicio y asociado
-        $ids_entrada = DB::table('entrada')->pluck('id')->toArray();
+        $ids_hotel = DB::table('hotel')->pluck('id')->toArray();
+        $ids_restaurante = DB::table('restaurante')->pluck('id')->toArray();
+        $ids_transporte = DB::table('transporte')->pluck('id')->toArray();
+        $ids_vuelo = DB::table('vuelo')->pluck('id')->toArray();
         $listPaquetes = [];
 
-        // Generar registros aleatorios vinculando los IDs
-        for ($i = 0; $i < 3; $i++) { // Cambia 10 al número deseado de registros
+        for ($i = 0; $i < 15; $i++) {
             $listPaquetes[] = [
-                'entrada_id' => $ids_entrada[array_rand($ids_entrada)],
+                'descuento' => rand(10, 100),
+                'hot_id' =>  $ids_hotel[array_rand($ids_hotel)],
+                'tra_id' =>  $ids_restaurante[array_rand($ids_restaurante)],
+                'res_id' =>  $ids_transporte[array_rand($ids_transporte)],
+                'vue_id' =>  $ids_vuelo[array_rand($ids_vuelo)],
             ];
         }
 

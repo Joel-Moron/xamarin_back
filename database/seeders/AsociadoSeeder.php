@@ -18,23 +18,23 @@ class AsociadoSeeder extends Seeder
         //
         $asociados = [
             [
-                'aso_direccion' => 'direccion 1',
-                'aso_ruc' => 12345678910,
+                'aso_telefono' => 12345789,
+                'aso_ruc' => 134567910,
                 'aso_rsocial' => 'empresa 1',
             ],
             [
-                'aso_direccion' => 'direccion 2',
-                'aso_ruc' => 12345678911,
+                'aso_telefono' => 12345789,
+                'aso_ruc' => 123568911,
                 'aso_rsocial' => 'empresa 2',
             ],
             [
-                'aso_direccion' => 'direccion 3',
-                'aso_ruc' => 12345678912,
+                'aso_telefono' => 12345789,
+                'aso_ruc' => 123567892,
                 'aso_rsocial' => 'empresa 3',
             ],
             [
-                'aso_direccion' => 'direccion 4',
-                'aso_ruc' => 12345678913,
+                'aso_telefono' => 12345789,
+                'aso_ruc' => 123567813,
                 'aso_rsocial' => 'empresa 4',
             ]
             // Agrega más registros aquí

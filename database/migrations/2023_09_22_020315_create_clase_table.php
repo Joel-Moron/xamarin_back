@@ -15,7 +15,10 @@ return new class extends Migration
     {
         Schema::create('clase', function (Blueprint $table) {
             $table->id();
-            $table->timestamps();
+            $table->string('clas_nombre');
+            $table->float('clas_precio',8,2);
+            $table->unsignedBigInteger('des_id');
+            $table->foreign('des_id')->references('id')->on('destino');
         });
     }
 

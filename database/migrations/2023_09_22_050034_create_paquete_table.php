@@ -15,7 +15,15 @@ return new class extends Migration
     {
         Schema::create('paquete', function (Blueprint $table) {
             $table->id();
-            $table->timestamps();
+            $table->integer('descuento')->length(3);
+            $table->unsignedBigInteger('hot_id')->nullable();
+            $table->unsignedBigInteger('tra_id')->nullable();
+            $table->unsignedBigInteger('res_id')->nullable();
+            $table->unsignedBigInteger('vue_id');
+            $table->foreign('hot_id')->references('id')->on('hotel');
+            $table->foreign('tra_id')->references('id')->on('transporte');
+            $table->foreign('res_id')->references('id')->on('restaurante');
+            $table->foreign('vue_id')->references('id')->on('vuelo');
         });
     }
 

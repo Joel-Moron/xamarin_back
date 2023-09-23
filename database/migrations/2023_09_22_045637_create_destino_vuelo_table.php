@@ -15,7 +15,10 @@ return new class extends Migration
     {
         Schema::create('destino_vuelo', function (Blueprint $table) {
             $table->id();
-            $table->timestamps();
+            $table->unsignedBigInteger('des_id');
+            $table->unsignedBigInteger('vue_id');
+            $table->foreign('des_id')->references('id')->on('destino');
+            $table->foreign('vue_id')->references('id')->on('vuelo');
         });
     }
 
