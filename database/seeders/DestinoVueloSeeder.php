@@ -20,11 +20,11 @@ class DestinoVueloSeeder extends Seeder
         
         $listDestinoVuelo = [];
         $destinosUtilizados = [];
-        
+        //PARA VARIOS PAISES
         foreach ($ids_vuelos as $vueloId) {
             $destinosDisponibles = array_diff($ids_destino, $destinosUtilizados);
         
-            for ($i = 0; $i < 3; $i++) {
+            for ($i = 0; $i < 4; $i++) {
                 // Verificar si hay destinos disponibles para este vuelo
                 if (!empty($destinosDisponibles)) {
                     $desId = $destinosDisponibles[array_rand($destinosDisponibles)];
@@ -45,6 +45,19 @@ class DestinoVueloSeeder extends Seeder
                 }
             }
         }
+
+
+        //PARA POCOS PAISES
+/*         foreach ($ids_vuelos as $vueloId) {
+        
+            for ($i = 0; $i < 2; $i++) {
+        
+                $listDestinoVuelo[] = [
+                    'vue_id' => $vueloId,
+                    'des_id' => $ids_destino[array_rand($ids_destino)],
+                ];
+            }
+        } */
         
         DB::table('destino_vuelo')->insert($listDestinoVuelo);
     }

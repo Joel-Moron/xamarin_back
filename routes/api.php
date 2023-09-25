@@ -2,24 +2,24 @@
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
-
-/*
-|--------------------------------------------------------------------------
-| API Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register API routes for your application. These
-| routes are loaded by the RouteServiceProvider within a group which
-| is assigned the "api" middleware group. Enjoy building your API!
-|
-*/
 use App\Http\Controllers\AuthController;
-use App\Http\Controllers\EntradaController;
 use App\Http\Controllers\PaqueteController;
+use App\Http\Controllers\VueloController;
+use App\Http\Controllers\DetallevueloController;
+use App\Http\Controllers\PaisController;
+
+//REGISTRO E INICIO DE SESION
 Route::post('/register', [AuthController::class, 'register']);
 Route::post('/login', [AuthController::class, 'login']);
-Route::get('/entradas', [EntradaController::class, 'index']);
-Route::post('/selectEntrada', [EntradaController::class, 'selectEntrada']);
-Route::get('/paquetes', [PaqueteController::class, 'selectPaquete']);
-Route::post('/comprarEntrada', [EntradaController::class, 'comprarEntrada']);
-Route::post('/getEntradasCompradas', [EntradaController::class, 'selectUsuarioEntradas']);
+
+//CONSULTAR
+Route::get('/vuelos', [VueloController::class, 'getVuelos']);
+Route::get('/paquetes', [PaqueteController::class, 'getPaquetes']);
+Route::get('/paises', [PaisController::class, 'getPaises']);
+Route::post('/historial/{id}', [DetallevueloController::class, 'Historial']);
+Route::post('/historialprueba/{id}', [DetallevueloController::class, 'HistorialPrueba']);
+Route::post('/vuelos/pais/{id}', [VueloController::class, 'getVuelosPais']);
+Route::post('/paquetes/pais/{id}', [PaqueteController::class, 'getPaquetesPais']);
+
+//COMPRAR
+Route::post('/comprar', [DetallevueloController::class, 'ComprarServicio']);

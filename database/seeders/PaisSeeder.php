@@ -46,7 +46,7 @@ class PaisSeeder extends Seeder
             ['nombre' => 'Bulgaria'],
             ['nombre' => 'Burkina Faso'],
             ['nombre' => 'Burundi'],
-            ['nombre' => 'Bután'],
+            /*['nombre' => 'Bután'],
             ['nombre' => 'Cabo Verde'],
             ['nombre' => 'Camboya'],
             ['nombre' => 'Camerún'],
@@ -209,7 +209,7 @@ class PaisSeeder extends Seeder
             ['nombre' => 'Yemen'],
             ['nombre' => 'Yibuti'],
             ['nombre' => 'Zambia'],
-            ['nombre' => 'Zimbabue'],
+            ['nombre' => 'Zimbabue'], */
         ];
 
         DB::table('pais')->insert($paises);

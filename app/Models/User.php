@@ -8,20 +8,19 @@ use Illuminate\Database\Eloquent\Model;
 class User extends Model
 {
     use HasFactory;
+    public $timestamps = false;
     protected $table = 'user';
     protected $fillable = [
-        'user_name',
-        'user_app',
-        'user_apm',
-        'user_dni',
-        'user_email',
-        'user_emailV',
-        'user_password',
-        'user_token',
-        'date_token',
+        'usu_nombre',
+        'usu_apellidop',
+        'usu_apellidom',
+        'usu_documento',
+        'usu_email',
+        'usu_emailV',
+        'usu_password',
+        'usu_targeta',
+        'rol_id',
+        'usu_token',
+        'date_token'
     ];
-    public function historial()
-    {
-        return $this->hasMany(Historial::class, 'user_id');
-    }
 }

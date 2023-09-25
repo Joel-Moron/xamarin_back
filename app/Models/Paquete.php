@@ -8,20 +8,38 @@ use Illuminate\Database\Eloquent\Model;
 class Paquete extends Model
 {
     use HasFactory;
+    public $timestamps = false;
     protected $table = 'paquete';
     protected $fillable = [
-        'entrada_id',
+        'descuento',
+        'hot_id',
+        'tra_id',
+        'res_id',
+        'vue_id',
     ];
-    public function entrada()
+
+    public function hotel()
     {
-        return $this->belongsTo(Entrada::class, 'id');
+        return $this->belongsTo(Hotel::class, 'hot_id');
     }
-    public function paqueteAsociado()
+
+    public function restaurante()
     {
-        return $this->hasMany(Paquete_asociado::class, 'paq_id');
+        return $this->belongsTo(Restaurante::class, 'res_id');
     }
-    public function detalleVuelo()
+
+    public function transporte()
     {
-        return $this->hasMany(Paquete::class, 'paq_id');
+        return $this->belongsTo(Transporte::class, 'tra_id');
+    }
+
+    public function vuelo()
+    {
+        return $this->belongsTo(Vuelo::class, 'vue_id');
+    }
+
+    public function detallevuelo()
+    {
+        return $this->hasMany(Detallevuelo::class,'paq_id');
     }
 }

@@ -17,8 +17,12 @@ return new class extends Migration
             $table->id();
             //$table->date('det_fecha');
             //$table->float('det_precio',8,2);
-            $table->unsignedBigInteger('paq_id');
-            $table->unsignedBigInteger('usu_id');
+            $table->unsignedBigInteger('paq_id')->nullable();
+            $table->unsignedBigInteger('usu_id')->nullable();
+            $table->unsignedBigInteger('vue_id')->nullable();
+            $table->unsignedBigInteger('clas_id')->nullable();
+            $table->foreign('clas_id')->references('id')->on('clase');
+            $table->foreign('vue_id')->references('id')->on('vuelo');
             $table->foreign('paq_id')->references('id')->on('paquete');
             $table->foreign('usu_id')->references('id')->on('user');
         });
